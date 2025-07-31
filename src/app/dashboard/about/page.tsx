@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Page() {
   return (
-    <div>dashboard_page</div>
+    <div>about count</div>
   )
 }

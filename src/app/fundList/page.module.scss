@@ -1,0 +1,16 @@
+$primary-color: #00D2F0;
+$text-color: #fff;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 12px;
+  background: $primary-color;
+  border-radius: 100px;
+  span {
+    font-size: 14px;
+    color: $text-color;
+    line-height: 1.2;
+  }
+}

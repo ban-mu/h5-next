@@ -1,25 +1,37 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
+import style from './tabbar.module.scss'
+import { tabList } from '../constant'
 
-const TabBar = ({ tabs, onChange }) => {
-  const [active, setActive] = useState(0);
+// interface TabItem {
+//   id: string,
+//   label: string,
+// }
 
-  const handleClick = (index) => {
-    setActive(index);
-    onChange(index);
+// interface TabProps {
+//   id: string,
+//   onChange: (info: TabItem) => void
+// }
+
+const TabBar = ({ onChange }) => {
+  const [id, setTabId] = useState('');
+
+  const handleClick = (item) => {
+    setTabId(item.id);
+    onChange(item);
   };
 
   return (
-    <div className="flex border-b border-gray-200 bg-white sticky top-0 z-10">
-      {tabs.map((tab, idx) => (
+    <div className={style.btnBox}>
+      {tabList.map((item, index) => (
         <div
-          key={idx}
-          className={`flex-1 text-center py-2 ${
-            active === idx ? "text-blue-500 border-b-2 border-blue-500" : "text-gray-500"
-          }`}
-          onClick={() => handleClick(idx)}
+          key={index}
+          className={`${
+            id === item.id ? style.active : ""
+          } ${style.btnItem}`}
+          onClick={() => handleClick(item)}
         >
-          {tab}
+          <span>{ item.label }</span>
         </div>
       ))}
     </div>

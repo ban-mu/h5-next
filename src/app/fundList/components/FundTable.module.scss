@@ -1,0 +1,37 @@
+$headHeight: 34px;
+.tableWrapper {
+  height: 100%;
+}
+.headerSection {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 9;
+  .tableHead {
+    display: inline-block;
+  }
+}
+.bodySection {
+  height: calc(100% - $headHeight);
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.headerRow {
+  height: $headHeight;
+}
+.fixCell {
+  width: 158px;
+}
+.tableBody {
+  overflow: hidden;
+}
+.tableBodyContainer {
+  display: inline-block;
+}
